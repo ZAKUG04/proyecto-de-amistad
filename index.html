@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <title>Happy Birthday</title>
+</head>
+<body>
+    <section id="bloque">
+    <label class="Button-day">Click Here</label>
+    <div class="listo" id="listo">Ready?</div>
+    <!-- 🎂 Torta -->
+    <div class="cake" id="cake">🎂</div>
+
+    <!-- Mensaje -->
+    <div class="mensage" id="mensaje">
+      <p>feliz cumpleaños lesbiana favorita</p>
+    </div>
+  </section>
+    <audio id="sound-click" src="/sounds/POP.mp3" preload="auto"></audio>
+    <audio id="music-bg" src="/sounds/learn_english_kids_7340622136341564714.mp3" preload="auto"></audio>
+  <!-- 🎉 Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script>
+    const label = document.querySelector(".Button-day");
+    const listo = document.getElementById("listo");
+    const cake = document.getElementById("cake");
+    const mensaje = document.getElementById("mensaje");
+    const soundClick = document.getElementById("sound-click");
+    const music = document.getElementById("music-bg");
+
+    label.addEventListener("click", () => {
+        soundClick.currentTime = 0;  // Reinicia para poder repetir rápido
+        soundClick.play();
+         // Música fondo
+    music.currentTime = 0;
+    music.play();
+    setTimeout(() => {
+      music.pause();
+    }, 60000);
+      // Reset
+      
+      cake.style.display = "none";
+      mensaje.style.display = "none";
+
+      // Mostrar listo
+      listo.style.display = "block";
+      //muestra la torta desparce listo
+       setTimeout(() => {
+        listo.style.display = "none";
+        cake.style.display = "block";
+      }, 1700);
+
+      // Confeti después de 1 segundo 
+      setTimeout(() => {
+        confetti({
+          particleCount: 150,
+          spread: 100,
+          origin: { y: 0.6 }
+        });
+      }, 1000);
+
+      // Mostrar mensaje después de 2 segundos
+      setTimeout(() => {
+        mensaje.style.display = "block";
+      }, 2000);
+    });
+  </script>
+</body>
+</html>
