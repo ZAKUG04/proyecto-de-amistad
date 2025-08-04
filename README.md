@@ -1,4 +1,6 @@
 cree esto de manera creativa para ver mis capacidades de crear una pagina que contenga un mensaje oculto y luego agregar cosas como musica, sonido etc.
+# ZAKU AUTHOR
+#  © todos los derechos reservados
 
 # 🎉 Happy Birthday Celebration Page
 
